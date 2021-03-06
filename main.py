@@ -1,8 +1,8 @@
 import requests
 from twilio.rest import Client
 # For pythonanywhere free account.
-import os
-from twilio.http.http_client import TwilioHttpClient
+#import os
+#from twilio.http.http_client import TwilioHttpClient
 
 # Your Account Sid and Auth Token from twilio.com/console
 # and set the environment variables. See http://twil.io/secure
@@ -16,6 +16,10 @@ parameters = {
     "exclude": "current,minutely,daily",
     "appid": "a5132cf41ea41adf227a72ff78e9f41e"
 }
+
+# env variables
+# export appid=a5132cf41ea41adf227a72ff78e9f41e
+# os.environ.get("appid")
 
 response = requests.get(f"https://api.openweathermap.org/data/2.5/onecall", params=parameters)
 hourlydata = response.json()["hourly"]
