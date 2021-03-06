@@ -14,7 +14,7 @@ parameters = {
     "lat": -4.441931,
     "lon": 15.266293,
     "exclude": "current,minutely,daily",
-    "appid": "a5132cf41ea41adf227a72ff78e9f41e"
+    "appid": "XXXXXXXXX"
 }
 
 # env variables
