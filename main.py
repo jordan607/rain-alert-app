@@ -1,5 +1,8 @@
 import requests
 from twilio.rest import Client
+# For pythonanywhere free account.
+import os
+from twilio.http.http_client import TwilioHttpClient
 
 # Your Account Sid and Auth Token from twilio.com/console
 # and set the environment variables. See http://twil.io/secure
@@ -24,6 +27,10 @@ for i in range(12):
         will_rain =True
 
 if will_rain == True:
+    # For pythonanywhere free account.
+    #proxy_client = TwilioHttpClient()
+    #proxy_client.session.proxies = {'https': os.environ['https_proxy']}
+    #client = Client(account_sid, auth_token, http_client=proxy_client)
     message = client.messages \
         .create(
         body="Its going to rain today, please carry umbrella",
@@ -33,3 +40,4 @@ if will_rain == True:
 
     print(message.sid)
 # More examples at : https://www.twilio.com/docs/sms/quickstart/python
+# https://help.pythonanywhere.com/pages/TwilioBehindTheProxy/
