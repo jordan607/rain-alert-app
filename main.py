@@ -14,11 +14,11 @@ parameters = {
     "lat": -4.441931,
     "lon": 15.266293,
     "exclude": "current,minutely,daily",
-    "appid": "XXXXXXXXX"
+    "appid": "XXXXXX"
 }
 
 # env variables
-# export appid=a5132cf41ea41adf227a72ff78e9f41e
+# export appid=XXXXXX
 # os.environ.get("appid")
 
 response = requests.get(f"https://api.openweathermap.org/data/2.5/onecall", params=parameters)
